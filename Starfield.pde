@@ -16,29 +16,34 @@ class NormalParticle
 	int nSpeed;
 	NormalParticle()
 	{
-		/*double dX = 50;
+		double dX = 50;
 		double dY = 50;
-		ellipse ((float)dX, (float)dY, 80, 80);*/
+		ellipse ((float)dX, (float)dY, 80, 80);
+
 dX = (int)(Math.random()*300);
 
 
 
       dY = (int)(Math.random()*300);
 	}
+	
+}
+interface Particle
+{
 	void move()
 	{};
 	void show()
 	{};
-}
-interface Particle
-{
 	//your code here
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle //uses an interface
 {
+	Particle someParticle = new NormalParticle();
+	someParticle.move();
+	someParticle.show();
 	//your code here
 }
-class JumboParticle //uses inheritance
+class JumboParticle implements Particle//uses inheritance
 {
 	//your code here
 }
