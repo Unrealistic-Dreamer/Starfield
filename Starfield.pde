@@ -1,16 +1,23 @@
-NormalParticle[]Particle;
+
 void setup()
 {
 	size(600,600);
 	background(24,30,30);
-	                                                                                                                                                                                                                                                                                                                                                                                                                           
+	Particle[]NormalParticle = new NormalParticle[2]
+	for (int i = 0; i < particle.length; i++)
+		if (i%2==0)
+			particle[i] = new Particle(i);
+		else particle[i]= new Particle(i,2);
+	OddballParticle[0] = new NormalParticle();
+	JumboParticle[1]= new NormalParticle();
+	((Particle)NormalParticle[0]).SOMETHINGFINDNAMELATER                                                                                                                                                                                                                                                                                                                                                                                                                        
 }
 void draw()
 {
 
 	
 }
-class NormalParticle
+class NormalParticle implements Particle()
 {
 	double dX, dY, dTheta;
 	int nSpeed;
@@ -36,14 +43,14 @@ interface Particle
 	{};
 	//your code here
 }
-class OddballParticle implements Particle //uses an interface
+class OddballParticle //uses an interface
 {
 	Particle someParticle = new NormalParticle();
 	someParticle.move();
 	someParticle.show();
 	//your code here
 }
-class JumboParticle implements Particle//uses inheritance
+class JumboParticle //uses inheritance
 {
 	//your code here
 }
