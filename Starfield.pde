@@ -3,28 +3,27 @@ void setup()
 {
 	size(600,600);
 	background(24,30,30);
-	Particle[]NormalParticle = new NormalParticle[2]
-	for (int i = 0; i < particle.length; i++)
-		if (i%2==0)
-			particle[i] = new Particle(i);
-		else particle[i]= new Particle(i,2);
+	/*
+		else particle[i]= new Particle(i,2);*/
 	OddballParticle[0] = new NormalParticle();
 	JumboParticle[1]= new NormalParticle();
-	((Particle)NormalParticle[0]).SOMETHINGFINDNAMELATER                                                                                                                                                                                                                                                                                                                                                                                                                        
+	((Particle)NormalParticle[0]).SOMETHINGFINDNAMELATER    ;                                                                                                                                                                                                                                                                                                                                                                                                                    
 }
 void draw()
 {
 
 	
 }
-class NormalParticle implements Particle()
+class NormalParticle 
 {
 	double dX, dY, dTheta;
 	int nSpeed;
 	NormalParticle()
 	{
-		double dX = 50;
-		double dY = 50;
+		double dX = Math.cos(2.03);
+		double dY = Math.sin(2.03);
+		dTheta = 20;
+		nSpeed = 50;
 		ellipse ((float)dX, (float)dY, 80, 80);
 
 dX = (int)(Math.random()*300);
@@ -37,17 +36,23 @@ dX = (int)(Math.random()*300);
 }
 interface Particle
 {
-	void move()
-	{};
-	void show()
-	{};
+	Particle[]NormalParticle = new NormalParticle[20];
+
+	for (int i = 0; i < particle.length; i++){
+			if (i%2==0){
+			particle[i] = new Particle(i);
+		     }
+	}
+	void move();
+	void show();
 	//your code here
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle //uses an interface
 {
+	public void show(){}
+	public void move(){}
 	Particle someParticle = new NormalParticle();
-	someParticle.move();
-	someParticle.show();
+	
 	//your code here
 }
 class JumboParticle //uses inheritance
