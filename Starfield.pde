@@ -1,11 +1,13 @@
-
+Particle[]Particles;
 void setup()
 {
 	size(600,600);
 	background(24,30,30);
-	/*
-		else particle[i]= new Particle(i,2);*/
-	OddballParticle[0] = new NormalParticle();
+	particles = new Particle [300];
+	for (int nI= 0;nI<particles.length; nI++){
+		particles[i] = new NormalParticle();
+	}
+	Particles[0] = new Oddball();
 	JumboParticle[1]= new NormalParticle();
 	((Particle)NormalParticle[0]).SOMETHINGFINDNAMELATER    ;                                                                                                                                                                                                                                                                                                                                                                                                                    
 }
@@ -38,24 +40,22 @@ interface Particle
 {
 	Particle[]NormalParticle = new NormalParticle[20];
 
-	for (int i = 0; i < particle.length; i++){
-			if (i%2==0){
-			particle[i] = new Particle(i);
-		     }
-	}
+	for (int i = 0; i < particle.length; i++){particle[i] = new Particle(i);}
+	
 	void move();
 	void show();
 	//your code here
 }
 class OddballParticle implements Particle //uses an interface
 {
+	
 	public void show(){}
 	public void move(){}
 	Particle someParticle = new NormalParticle();
 	
 	//your code here
 }
-class JumboParticle //uses inheritance
+class JumboParticle implements Particle//uses inheritance
 {
 	//your code here
 }
