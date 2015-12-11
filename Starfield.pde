@@ -9,7 +9,7 @@ void setup()
 	}
 	Particles[0] = new Oddball();
 	JumboParticle[1]= new NormalParticle();
-	((Particle)NormalParticle[0]).SOMETHINGFINDNAMELATER    ;                                                                                                                                                                                                                                                                                                                                                                                                                    
+	((Particle)NormalParticle[0]).numPartickles;                                                                                                                                                                                                                                                                                                                                                                                                                    
 }
 void draw()
 {
@@ -28,19 +28,21 @@ class NormalParticle
 		nSpeed = 50;
 		ellipse ((float)dX, (float)dY, 80, 80);
 
-dX = (int)(Math.random()*300);
-
-
-
+	  dX = (int)(Math.random()*300);
       dY = (int)(Math.random()*300);
 	}
+	5 member variables: X and Y positions, Color, Angle and Speed. (Hint use doubles for X, Y, Speed and Angle)
+  * `NormalParticle()`, the class constructor
+  * `void move()`, Takes the cos of the angle times the speed and adds it to the X coordinate. Does the same to Y with the sin of the angle.
+  * `void show()`, draws the particle in the correct color
 	
 }
 interface Particle
 {
 	Particle[]NormalParticle = new NormalParticle[20];
 
-	for (int i = 0; i < particle.length; i++){particle[i] = new Particle(i);}
+	for (int i = 0; i < particle.length; i++)
+		particle[i] = new Particle(i);
 	
 	void move();
 	void show();
